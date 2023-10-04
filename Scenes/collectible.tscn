@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxj8b32hm7af5"]
+
+[ext_resource type="Texture2D" uid="uid://bstawbqgnun84" path="res://Assets/character_handGreen.png" id="1_5dja0"]
+[ext_resource type="Script" path="res://Scenes/collectible.gd" id="1_ik1hf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e57nl"]
+radius = 16.0
+
+[node name="Collectible" type="StaticBody2D" groups=["collectible"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ik1hf")
+
+[node name="CharacterHandGreen" type="Sprite2D" parent="."]
+texture = ExtResource("1_5dja0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e57nl")

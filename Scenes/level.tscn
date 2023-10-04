@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcglvsa2ag6vb"]
+
+[ext_resource type="PackedScene" uid="uid://c3dut6y0m4tng" path="res://Scenes/platform.tscn" id="1_l6ol1"]
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_nirh0"]
+[ext_resource type="PackedScene" uid="uid://bcu0fui8tg4jd" path="res://Scenes/player.tscn" id="2_ku1cp"]
+[ext_resource type="PackedScene" uid="uid://dxj8b32hm7af5" path="res://Scenes/collectible.tscn" id="3_f2cfd"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_nirh0")
+
+[node name="ground" type="StaticBody2D" parent="."]
+position = Vector2(0, 576)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground"]
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 96, 0, 96)
+
+[node name="Polygon2D" type="Polygon2D" parent="ground/CollisionPolygon2D"]
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 96, 0, 96)
+
+[node name="platform" parent="." instance=ExtResource("1_l6ol1")]
+position = Vector2(160, 384)
+
+[node name="platform2" parent="." instance=ExtResource("1_l6ol1")]
+position = Vector2(640, 320)
+
+[node name="player" parent="." node_paths=PackedStringArray("current_level") instance=ExtResource("2_ku1cp")]
+position = Vector2(64, 544)
+current_level = NodePath("..")
+
+[node name="Collectible" parent="." instance=ExtResource("3_f2cfd")]
+position = Vector2(768, 256)
+
+[node name="Collectible2" parent="." instance=ExtResource("3_f2cfd")]
+position = Vector2(512, 224)
+
+[node name="Collectible3" parent="." instance=ExtResource("3_f2cfd")]
+position = Vector2(288, 320)

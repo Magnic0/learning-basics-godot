@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqsg5bjsyau5q"]
+
+[ext_resource type="PackedScene" uid="uid://bcglvsa2ag6vb" path="res://Scenes/level.tscn" id="1_phtyd"]
+[ext_resource type="PackedScene" uid="uid://do41k5yecqkah" path="res://Scenes/ui.tscn" id="2_v0lf1"]
+
+[node name="Main" type="Node2D"]
+
+[node name="level" parent="." instance=ExtResource("1_phtyd")]
+
+[node name="ui" parent="." instance=ExtResource("2_v0lf1")]
+unique_name_in_owner = true
