@@ -1,4 +1,7 @@
 extends Area2D
 
-func _on_body_entered(body):
+@onready var game_manager = %"Game Manager"
+
+func _on_body_entered(_body):
+	game_manager.add_point()
 	queue_free()
