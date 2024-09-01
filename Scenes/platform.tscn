@@ -1,9 +1,17 @@
-[gd_scene format=3 uid="uid://c3dut6y0m4tng"]
+[gd_scene load_steps=3 format=3 uid="uid://cmbpj14nlamok"]
 
-[node name="platform" type="StaticBody2D"]
+[ext_resource type="Texture2D" uid="uid://b21dta8la5vwj" path="res://Assets/sprites/platforms.png" id="1_x153k"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 256, 0, 256, 64, 0, 64)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0dpj"]
+size = Vector2(16, 8)
 
-[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D"]
-polygon = PackedVector2Array(0, 0, 256, 0, 256, 64, 0, 64)
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x153k")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d0dpj")
+one_way_collision = true
