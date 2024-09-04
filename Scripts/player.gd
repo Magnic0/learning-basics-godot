@@ -24,7 +24,7 @@ func _physics_process(delta):
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("running")
-	else:
+	if Input.is_action_just_pressed("jump") && is_on_floor():
 		animated_sprite.play("jumping")
 	
 	if direction > 0:
